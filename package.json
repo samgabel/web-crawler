@@ -1,0 +1,23 @@
+{
+  "name": "web-crawler",
+  "version": "1.0.0",
+  "description": "Web Crawler",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samgabel/web-crawler.git"
+  },
+  "author": "Sam Gabel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samgabel/web-crawler/issues"
+  },
+  "homepage": "https://github.com/samgabel/web-crawler#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
