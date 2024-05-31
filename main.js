@@ -5,7 +5,8 @@ import { argv } from 'node:process'
 
 
 
-function main() {
+async function main() {
+  // Argument parsing
   // disregard the first two included arguments
   const arg = argv.slice(2)
   // if there is no extra argument
@@ -18,14 +19,12 @@ function main() {
     console.log('Too many arguments supplied')
     return
   }
+
   // Execution
   console.log(`The Web Crawler is starting on ${arg}`)
-  try {
-    crawlPage(arg)
-  } catch (err) {
-    console.error(err.message)
-  }
 
+  const pages = await crawlPage(arg)
+  console.log(pages)
 }
 
 main()
