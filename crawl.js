@@ -43,6 +43,33 @@ function getURLsFromHTML(htmlBody, baseURL) {
 }
 
 
+async function crawlPage(currentURL) {
+  console.log(`Crawling: ${currentURL}`)
+  // Fetching the Response object
+  let response
+  try {
+    response = await fetch(currentURL, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'text/html'
+      }
+    })
+  } catch (err) {
+    throw new Error(`Got Network error: ${err.message}`)
+  }
+  // Seeing if the Response is valid
+  if (response.status >= 399) {
+    throw new Error(`Server Error Status: ${response.status}`)
+  }
+  // Seeing if the Response headers 'Content-Type' is 'text/html'
+  if (!response.headers.get('Content-Type').includes('text/html')) {
+    throw new Error(`Server Response Content-Type is not 'text/html`)
+  }
+  // If it is, print the HTML as a string
+  console.log(await response.text())
+}
 
-export { normalizeURL, getURLsFromHTML };
+
+export { normalizeURL, getURLsFromHTML, crawlPage };
 
