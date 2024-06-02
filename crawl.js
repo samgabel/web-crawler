@@ -50,7 +50,7 @@ function getURLsFromHTML(htmlBody, baseURL) {
         urls.push(url.href)
         // if the baseURL parameter is empty or flawed then we will catch the error thrown by the `URL` constructor
       } catch (err) {
-        console.log(`${err.message}: ${href}`)
+        console.error(`${err.message}: ${href}`)
       }
     }
   }

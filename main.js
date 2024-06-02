@@ -1,5 +1,7 @@
 import { crawlPage } from './crawl.js'
 
+import { printReport } from './report.js'
+
 // https://nodejs.org/docs/latest/api/process.html#processargv
 import { argv } from 'node:process'
 
@@ -24,7 +26,7 @@ async function main() {
   console.log(`The Web Crawler is starting on ${arg}`)
 
   const pages = await crawlPage(arg)
-  console.log(pages)
+  printReport(pages)
 }
 
 main()

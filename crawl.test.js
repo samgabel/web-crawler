@@ -1,6 +1,6 @@
-import { normalizeURL, getURLsFromHTML } from './crawl.js'
-
 import { test, expect } from '@jest/globals'
+
+import { normalizeURL, getURLsFromHTML } from './crawl.js'
 
 
 
@@ -60,4 +60,5 @@ test('getURLsFromHTML both', () => {
   const expected = ['https://blog.boot.dev/path/one', 'https://other.com/path/one']
   expect(actual).toEqual(expected)
 })
+
 

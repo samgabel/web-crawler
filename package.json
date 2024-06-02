@@ -5,8 +5,8 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node main.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "start": "node --no-warnings main.js",
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js --verbose"
   },
   "jest": {
     "transform": {}
